@@ -3,7 +3,7 @@ import { Typography } from 'antd';
 const { Title } = Typography;
 import { useState } from 'react';
 import { PollyClient, SynthesizeSpeechCommand } from '@aws-sdk/client-polly';
-import Audioplayer from './Audioplayer';
+import Audioplayer from "./Audioplayer";
 
 const pollyClient = new PollyClient({
   region: process.env.NEXT_PUBLIC_REGION,

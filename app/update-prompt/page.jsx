@@ -10,7 +10,7 @@ const EditPrompt = () => {
   const searchParams = useSearchParams();
   const promptId = searchParams.get('id');
 
-git 
+
   const [post, setPost] = useState({
     prompt: '',
     tag: '',
