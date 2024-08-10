@@ -23,8 +23,8 @@
 5. **Voice-Enhanced Prompts**:
    - Anyone can listen to any post by clicking the mic button in the post box.
      
-![Screenshot 2024-08-09 131917](https://github.com/user-attachments/assets/4e8bbd4c-ec24-4eb6-90eb-34d8c9e5abcd)
-![Screenshot 2024-08-09 131840](https://github.com/user-attachments/assets/268be34e-3e86-42e3-97c7-63aa8499ad8c)
+![Screenshot 2024-08-11 000405](https://github.com/user-attachments/assets/daa9c648-fb7a-4f25-ab67-e31883cfb46d)
+
 
 ## Technologies Used
 
