@@ -44,7 +44,7 @@ function Form({ type, post, setPost, submitting, handleSubmit }) {
           </span>
         </Title>
         <p className="mt-4 text-lg text-gray-600">
-          Unleash your creativity by crafting and sharing captivating prompts with the world. Dive into an AI-powered realm that nurtures your imagination and lets it roam freely.
+          Unleash your creativity by crafting and sharing captivating prompts with the world. Dive into a realm that nurtures your imagination and lets it roam freely.
         </p>
         <form
           onSubmit={handleSubmit}
