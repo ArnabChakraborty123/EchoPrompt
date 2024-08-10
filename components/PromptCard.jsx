@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
@@ -21,15 +21,15 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   const [isConverting, setIsConverting] = useState(false);
 
   const handlProfileClick = () => {
-    if (post.creator._id === session?.user.id) return router.push('/profile')
-    router.push(`/profile/${post.creator._id}?name=${post.creator.username}`)
-  }
+    if (post.creator._id === session?.user.id) return router.push('/profile');
+    router.push(`/profile/${post.creator._id}?name=${post.creator.username}`);
+  };
 
   const handleCopy = () => {
     setCopied(post.prompt);
     navigator.clipboard.writeText(post.prompt);
     setTimeout(() => setCopied(""), 3000);
-  }
+  };
 
   const convertTextToAudio = async () => {
     setIsConverting(true);
@@ -60,7 +60,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   };
 
   return (
-    <div className='prompt_card p-5 bg-white rounded-lg shadow-md'>
+    <div className='prompt_card p-6 bg-white rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r from-purple-400 via-pink-500 to-red-500'>
       <div className='flex justify-between items-start gap-3'>
         <div 
           className='flex-1 flex items-center gap-3 cursor-pointer' 
@@ -71,13 +71,13 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
             alt='user_image'
             width={40}
             height={40}
-            className='rounded-full object-cover'
+            className='rounded-full object-cover shadow-md'
           />
           <div className='flex flex-col'>
-            <h3 className='font-satoshi font-semibold text-gray-900'>
+            <h3 className='font-satoshi font-semibold text-gray-900 hover:text-white'>
               {post.creator.username}
             </h3>
-            <p className='font-inter text-sm text-gray-500 truncate max-w-[200px]'>
+            <p className='font-inter text-sm text-gray-500 truncate max-w-[200px] hover:text-white'>
               {post.creator.email}
             </p>
           </div>
@@ -92,15 +92,16 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
             alt={copied === post.prompt ? "tick_icon" : "copy_icon"}
             width={12}
             height={12}
+            className='hover:scale-110 transition-transform duration-200'
           />
         </div>
       </div>
       <div className='flex items-start justify-between mt-4'>
-        <p className='flex-1 font-satoshi text-sm text-gray-700 break-words'>
+        <p className='flex-1 font-satoshi text-sm text-gray-700 break-words hover:text-white'>
           {post.prompt}
         </p>
         <button
-          className={`ml-3 p-1.5 rounded-full transition-colors duration-300 ${
+          className={`ml-3 p-2 rounded-full transition-colors duration-300 ${
             isConverting
               ? 'bg-gray-300 cursor-not-allowed'
               : 'bg-blue-500 hover:bg-blue-600 text-white'
@@ -110,7 +111,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4"
+            className="h-5 w-5"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -125,7 +126,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
         </button>
       </div>
       <p 
-        className='mt-3 font-inter text-sm blue_gradient cursor-pointer'
+        className='mt-3 font-inter text-sm blue_gradient cursor-pointer hover:text-white'
         onClick={() => handleTagClick && handleTagClick(post.tag)}
       >
         {post.tag}
@@ -134,13 +135,13 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
         (
           <div className='mt-5 flex-center gap-4 border-t border-gray-100 pt-3'>
             <p
-              className='font-inter text-sm green_gradient cursor-pointer'
+              className='font-inter text-sm green_gradient cursor-pointer hover:text-white'
               onClick={handleEdit}
             >
               Edit
             </p>
             <p
-              className='font-inter text-sm orange_gradient cursor-pointer'
+              className='font-inter text-sm orange_gradient cursor-pointer hover:text-white'
               onClick={handleDelete}
             >
               Delete
